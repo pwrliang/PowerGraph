@@ -165,7 +165,7 @@ endmacro(requires_eigen)
 # libbz  =================================================================
 ExternalProject_Add(libbz2
   PREFIX ${GraphLab_SOURCE_DIR}/deps/libbz2
-  URL http://www.bzip.org/1.0.6/bzip2-1.0.6.tar.gz
+  URL https://nchc.dl.sourceforge.net/project/bzip2/bzip2-1.0.6.tar.gz
   URL_MD5 00b516f4704d4a7cb50a1d97e6e8e15b
   INSTALL_DIR ${GraphLab_SOURCE_DIR}/deps/local
   CONFIGURE_COMMAND ""
@@ -183,7 +183,7 @@ ExternalProject_Add(libbz2
 # unordered containers.
 ExternalProject_Add(boost
   PREFIX ${GraphLab_SOURCE_DIR}/deps/boost
-  URL "http://tcpdiag.dl.sourceforge.net/project/boost/boost/1.53.0/boost_1_53_0.tar.gz" 
+  URL "https://nchc.dl.sourceforge.net/project/boost/boost/1.53.0/boost_1_53_0.tar.gz" 
   URL_MD5 57a9e2047c0f511c4dfcf00eb5eb2fbb
   BUILD_IN_SOURCE 1
   CONFIGURE_COMMAND
@@ -238,7 +238,7 @@ if(NOT NO_TCMALLOC)
     PREFIX ${GraphLab_SOURCE_DIR}/deps/tcmalloc
     # Some users can't access domain googlecode.com ,This is a spare URL
     # URL http://sourceforge.jp/projects/sfnet_gperftools.mirror/downloads/gperftools-2.0.tar.gz
-    URL http://gperftools.googlecode.com/files/gperftools-2.0.tar.gz
+    URL https://src.fedoraproject.org/lookaside/pkgs/gperftools/gperftools-2.0.tar.gz/13f6e8961bc6a26749783137995786b6/gperftools-2.0.tar.gz
     URL_MD5 13f6e8961bc6a26749783137995786b6
     PATCH_COMMAND patch -N -p0 -i ${GraphLab_SOURCE_DIR}/patches/tcmalloc.patch || true
     CONFIGURE_COMMAND <SOURCE_DIR>/configure --enable-frame-pointers --prefix=<INSTALL_DIR> ${tcmalloc_shared}
